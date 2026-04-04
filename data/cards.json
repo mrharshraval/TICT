@@ -1,0 +1,156 @@
+[
+  {
+    "id": "0",
+    "name": "The Fool",
+    "meaning": "New beginnings, optimism, trust in the universe.",
+    "keywords": "Beginning, Innocence, Spontaneity, Free spirit",
+    "image": "/cards/the-fool.jpg"
+  },
+  {
+    "id": "1",
+    "name": "The Magician",
+    "meaning": "Manifestation, resourcefulness, power, inspired action.",
+    "keywords": "Manifestation, Resourcefulness, Power, Inspired action",
+    "image": "/cards/the-magician.jpg"
+  },
+  {
+    "id": "2",
+    "name": "The High Priestess",
+    "meaning": "Intuition, sacred knowledge, divine feminine, the subconscious mind.",
+    "keywords": "Intuition, Sacred knowledge, Divine feminine, Subconscious mind",
+    "image": "/cards/the-high-priestess.jpg"
+  },
+  {
+    "id": "3",
+    "name": "The Empress",
+    "meaning": "Femininity, beauty, nature, nurturing, abundance.",
+    "keywords": "Femininity, Beauty, Nature, Nurturing, Abundance",
+    "image": "/cards/the-empress.jpg"
+  },
+  {
+    "id": "4",
+    "name": "The Emperor",
+    "meaning": "Authority, establishment, structure, a father figure.",
+    "keywords": "Authority, Structure, Control, Father figure",
+    "image": "/cards/the-emperor.jpg"
+  },
+  {
+    "id": "5",
+    "name": "The Hierophant",
+    "meaning": "Spiritual wisdom, religious beliefs, conformity, tradition, institutions.",
+    "keywords": "Spiritual wisdom, Tradition, Conformity, Institutions",
+    "image": "/cards/the-hierophant.jpg"
+  },
+  {
+    "id": "6",
+    "name": "The Lovers",
+    "meaning": "Love, harmony, relationships, values alignment, choices.",
+    "keywords": "Love, Harmony, Relationships, Values alignment, Choices",
+    "image": "/cards/the-lovers.jpg"
+  },
+  {
+    "id": "7",
+    "name": "The Chariot",
+    "meaning": "Control, willpower, success, action, determination.",
+    "keywords": "Control, Willpower, Success, Action, Determination",
+    "image": "/cards/the-chariot.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Strength",
+    "meaning": "Strength, courage, persuasion, influence, compassion.",
+    "keywords": "Strength, Courage, Persuasion, Influence, Compassion",
+    "image": "/cards/strength.jpg"
+  },
+  {
+    "id": "9",
+    "name": "The Hermit",
+    "meaning": "Soul-searching, introspection, being alone, inner guidance.",
+    "keywords": "Soul-searching, Introspection, Inner guidance, Solitude",
+    "image": "/cards/the-hermit.jpg"
+  },
+  {
+    "id": "10",
+    "name": "Wheel of Fortune",
+    "meaning": "Good luck, karma, life cycles, destiny, a turning point.",
+    "keywords": "Good luck, Karma, Life cycles, Destiny, Turning point",
+    "image": "/cards/wheel-of-fortune.jpg"
+  },
+  {
+    "id": "11",
+    "name": "Justice",
+    "meaning": "Justice, fairness, truth, cause and effect, law.",
+    "keywords": "Justice, Fairness, Truth, Cause and effect, Law",
+    "image": "/cards/justice.jpg"
+  },
+  {
+    "id": "12",
+    "name": "The Hanged Man",
+    "meaning": "Pause, surrender, letting go, new perspectives.",
+    "keywords": "Pause, Surrender, Letting go, New perspectives",
+    "image": "/cards/the-hanged-man.jpg"
+  },
+  {
+    "id": "13",
+    "name": "Death",
+    "meaning": "Endings, change, transformation, transition.",
+    "keywords": "Endings, Change, Transformation, Transition",
+    "image": "/cards/death.jpg"
+  },
+  {
+    "id": "14",
+    "name": "Temperance",
+    "meaning": "Balance, moderation, patience, purpose.",
+    "keywords": "Balance, Moderation, Patience, Purpose",
+    "image": "/cards/temperance.jpg"
+  },
+  {
+    "id": "15",
+    "name": "The Devil",
+    "meaning": "Shadow self, attachment, addiction, restriction, sexuality.",
+    "keywords": "Shadow self, Attachment, Addiction, Restriction, Sexuality",
+    "image": "/cards/the-devil.jpg"
+  },
+  {
+    "id": "16",
+    "name": "The Tower",
+    "meaning": "Sudden change, upheaval, chaos, revelation, awakening.",
+    "keywords": "Sudden change, Upheaval, Chaos, Revelation, Awakening",
+    "image": "/cards/the-tower.jpg"
+  },
+  {
+    "id": "17",
+    "name": "The Star",
+    "meaning": "Hope, faith, purpose, renewal, spirituality.",
+    "keywords": "Hope, Faith, Purpose, Renewal, Spirituality",
+    "image": "/cards/the-star.jpg"
+  },
+  {
+    "id": "18",
+    "name": "The Moon",
+    "meaning": "Illusion, fear, anxiety, subconscious, intuition.",
+    "keywords": "Illusion, Fear, Anxiety, Subconscious, Intuition",
+    "image": "/cards/the-moon.jpg"
+  },
+  {
+    "id": "19",
+    "name": "The Sun",
+    "meaning": "Positivity, fun, warmth, success, vitality.",
+    "keywords": "Positivity, Fun, Warmth, Success, Vitality",
+    "image": "/cards/the-sun.jpg"
+  },
+  {
+    "id": "20",
+    "name": "Judgement",
+    "meaning": "Judgement, rebirth, inner calling, absolution.",
+    "keywords": "Judgement, Rebirth, Inner calling, Absolution",
+    "image": "/cards/judgement.jpg"
+  },
+  {
+    "id": "21",
+    "name": "The World",
+    "meaning": "Completion, integration, accomplishment, travel.",
+    "keywords": "Completion, Integration, Accomplishment, Travel",
+    "image": "/cards/the-world.jpg"
+  }
+]
