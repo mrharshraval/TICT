@@ -41,7 +41,7 @@ const allFaqs = [
 export default function FAQPage() {
   return (
     <div className="min-h-screen bg-background pt-12">
-      <div className="container mx-auto px-6 md:px-12 py-16 text-center max-w-3xl">
+      <div className="container mx-auto px-6 md:px-12 py-16 text-center w-full">
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground mb-6">
           Frequently Asked Questions
         </h1>

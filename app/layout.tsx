@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
@@ -8,10 +9,7 @@ import { Toaster } from "@/components/ui/sonner"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site-config"
 
-const fontSans = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-sans" 
-})
+const inter = Inter({subsets:['latin'],variable:'--font-sans'})
 
 const fontMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -68,10 +66,9 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "antialiased",
-        fontMono.variable,
-        fontSans.variable
-      )}
+              "antialiased",
+              fontMono.variable
+            , "font-sans", inter.variable)}
     >
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>

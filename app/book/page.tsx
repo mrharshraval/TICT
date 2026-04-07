@@ -159,7 +159,7 @@ export default function BookingPage() {
   return (
     <>
       <div className="container mx-auto px-6 md:px-12 py-24 md:py-32 w-full min-h-[60vh]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 w-full mx-auto">
           
           {/* Context Column (Left) */}
           <div className="lg:col-span-5 space-y-10 lg:sticky lg:top-32 lg:h-max">

@@ -13,7 +13,7 @@ export function CallToAction() {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           <div className="rounded-lg bg-foreground px-8 py-14 md:py-16 text-center">
             <div className="flex flex-col items-center gap-6">
 
@@ -43,17 +43,6 @@ export function CallToAction() {
                   <Link href="/book">
                     Book Your Private Session
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-
-                <Button
-                  asChild
-                  variant="ghost"
-                  id="cta-free-reading"
-                  className="text-background/70 hover:text-background hover:bg-background/10"
-                >
-                  <Link href="/read">
-                    Try a Free Reading
                   </Link>
                 </Button>
               </div>

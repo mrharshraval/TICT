@@ -302,7 +302,7 @@ export default function PricingPage() {
       {/* ── Hero ── */}
       <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="w-full text-center">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium uppercase tracking-wide mb-6">
             Transparent Pricing
@@ -363,7 +363,7 @@ export default function PricingPage() {
       {/* ── Category Header ── */}
       <section className="py-6">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-2xl mx-auto text-center">
+          <div className="w-full text-center">
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">{activeCategory.tagline}</p>
         <p className="text-sm text-muted-foreground leading-relaxed">{activeCategory.description}</p>
           </div>
@@ -376,8 +376,8 @@ export default function PricingPage() {
         <div
           key={activeTab}
           className={`
-            grid gap-6 max-w-6xl mx-auto
-            ${activeCategory.items.length === 2 ? "grid-cols-1 md:grid-cols-2 max-w-3xl" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}
+            grid gap-6 w-full mx-auto
+            ${activeCategory.items.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}
           `}
           style={{ animation: "fadeSlideIn 0.4s ease both" }}
         >

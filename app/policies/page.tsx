@@ -5,7 +5,7 @@ import { CallToAction } from "@/components/cta"
 export default function PoliciesPage() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-6 md:px-12 py-24 max-w-3xl">
+      <div className="container mx-auto px-6 md:px-12 py-24 w-full">
         <div className="space-y-4 mb-16 text-center">
           <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-foreground">
             Policies & Terms
