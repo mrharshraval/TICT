@@ -1,10 +1,11 @@
 "use client"
 
 import { CallToAction } from "@/components/cta"
+import { FAQ } from "@/components/faq"
 
 import Link from "next/link"
 import { useState } from "react"
-import { Check, Sparkles, Wind, Gem, ChevronDown, Star, ArrowRight, Zap } from "lucide-react"
+import { Check, Sparkles, Wind, Gem, ArrowRight } from "lucide-react"
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -183,91 +184,71 @@ const categories = [
 
 const faqs = [
   {
-    q: "How do I choose the right plan?",
-    a: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a situation. 'The Year Ahead' is for seekers committed to long-term, guided spiritual growth.",
+    question: "How do I choose the right plan?",
+    answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a situation. 'The Year Ahead' is for seekers committed to long-term, guided spiritual growth.",
   },
   {
-    q: "How do WhatsApp Query Sessions work?",
-    a: "Package members can message our dedicated support line anytime. We provide clear, concise spiritual guidance within 72 hours for all queries sent through WhatsApp.",
+    question: "How do WhatsApp Query Sessions work?",
+    answer: "Package members can message our dedicated support line anytime. We provide clear, concise spiritual guidance within 72 hours for all queries sent through WhatsApp.",
   },
   {
-    q: "Are online sessions as effective as in-person?",
-    a: "Absolutely. Tarot, Reiki, and numerology readings work powerfully across all channels. Many of our clients find that online sessions offer greater comfort and openness, leading to deeper insights.",
+    question: "Are online sessions as effective as in-person?",
+    answer: "Absolutely. Tarot, Reiki, and numerology readings work powerfully across all channels. Many of our clients find that online sessions offer greater comfort and openness, leading to deeper insights.",
   },
   {
-    q: "Can I gift a session to someone?",
-    a: "Yes! We offer digital gift cards for all our sessions. Simply select the plan you wish to gift during booking, enter the recipient's details, and we'll handle the rest.",
+    question: "Can I gift a session to someone?",
+    answer: "Yes! We offer digital gift cards for all our sessions. Simply select the plan you wish to gift during booking, enter the recipient's details, and we'll handle the rest.",
   },
   {
-    q: "What is your cancellation policy?",
-    a: "We ask for at least 24 hours' notice for cancellations or rescheduling. Sessions cancelled within 24 hours may be subject to a rescheduling fee. Please see our full policy on the booking page.",
+    question: "What is your cancellation policy?",
+    answer: "We ask for at least 24 hours' notice for cancellations or rescheduling. Sessions cancelled within 24 hours may be subject to a rescheduling fee. Please see our full policy on the booking page.",
   },
 ]
 
 // ─── Component: PricingCard ────────────────────────────────────────────────
 
 function PricingCard({ item, index }: { item: (typeof categories)[0]["items"][0]; index: number }) {
-  const isPopular = item.badge === "Most Popular"
-  const isBestValue = item.badge === "Best Value"
-  const isPremium = item.badge === "Premium"
-  const hasHighlight = isPopular || isBestValue || isPremium
+  const hasHighlight = !!item.badge
 
   return (
     <div
       className={`
-        group relative flex flex-col rounded-3xl overflow-hidden transition-colors duration-300
-        ${hasHighlight
-          ? "bg-[#1E152A] text-white ring-1 ring-purple-500/20"
-          : "bg-white text-slate-900 ring-1 ring-slate-100"
-        }
+        relative flex flex-col rounded-lg overflow-hidden border border-border transition-colors duration-200
+        ${hasHighlight ? "bg-foreground text-background" : "bg-card text-card-foreground"}
       `}
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      {/* Gradient glow for popular card */}
-      {hasHighlight && (
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl" />
-        </div>
-      )}
-
       {/* Badge */}
       {item.badge && (
-        <div className="absolute top-6 right-6 z-10">
-          <span className={`
-            inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest
-            ${isPopular ? "bg-purple-500/20 text-purple-300 ring-1 ring-purple-500/40" : ""}
-            ${isBestValue ? "bg-amber-400/20 text-amber-300 ring-1 ring-amber-400/40" : ""}
-            ${isPremium ? "bg-rose-400/20 text-rose-300 ring-1 ring-rose-400/40" : ""}
-          `}>
-            <Star className="w-3 h-3 fill-current" />
+        <div className="absolute top-5 right-5 z-10">
+          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-medium uppercase tracking-wide bg-background/15 text-background/70">
             {item.badge}
           </span>
         </div>
       )}
 
-      <div className="p-8 pb-6 flex flex-col flex-1">
+      <div className="p-6 flex flex-col flex-1">
         {/* Plan name */}
-        <h3 className={`text-xl font-bold tracking-tight mb-3 ${hasHighlight ? "text-white" : "text-slate-900"}`}>
+        <h3 className={`text-base font-semibold mb-2 ${hasHighlight ? "text-background" : "text-foreground"}`}>
           {item.name}
         </h3>
 
         {/* Description */}
-        <p className={`text-sm leading-relaxed mb-8 min-h-[3.5rem] ${hasHighlight ? "text-purple-200/70" : "text-slate-500"}`}>
+        <p className={`text-sm leading-relaxed mb-6 min-h-[3rem] ${hasHighlight ? "text-background/60" : "text-muted-foreground"}`}>
           {item.description}
         </p>
 
         {/* Price */}
-        <div className="flex items-end gap-1.5 mb-8">
+        <div className="flex items-end gap-1 mb-6">
           {item.currency && (
-            <span className={`text-lg font-semibold self-start mt-1.5 ${hasHighlight ? "text-purple-300" : "text-slate-400"}`}>
+            <span className={`text-sm font-medium self-start mt-1 ${hasHighlight ? "text-background/60" : "text-muted-foreground"}`}>
               {item.currency}
             </span>
           )}
-          <span className={`text-5xl font-semibold tracking-tight leading-none ${hasHighlight ? "text-white" : "text-slate-900"}`}>
+          <span className={`text-4xl font-semibold tracking-tight leading-none ${hasHighlight ? "text-background" : "text-foreground"}`}>
             {item.price}
           </span>
-          <span className={`text-sm mb-1 ml-0.5 ${hasHighlight ? "text-purple-300/70" : "text-slate-400"}`}>
+          <span className={`text-xs mb-1 ml-0.5 ${hasHighlight ? "text-background/50" : "text-muted-foreground"}`}>
             {item.unit}
           </span>
         </div>
@@ -276,67 +257,34 @@ function PricingCard({ item, index }: { item: (typeof categories)[0]["items"][0]
         <Link
           href={item.ctaHref}
           className={`
-            group/btn relative flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-sm font-bold tracking-wide transition-all duration-300 mb-8 overflow-hidden
+            flex items-center justify-center gap-2 w-full py-2.5 rounded-md text-sm font-medium transition-colors mb-6
             ${hasHighlight
-              ? "bg-white text-[#1E152A] hover:bg-purple-50"
-              : "bg-[#1E152A] text-white hover:bg-slate-800"
+              ? "bg-background text-foreground hover:bg-background/90"
+              : "bg-foreground text-background hover:bg-foreground/90"
             }
           `}
         >
-          <span className="relative z-10">{item.cta}</span>
-          <ArrowRight className="w-4 h-4 relative z-10" />
+          {item.cta}
+          <ArrowRight className="w-3.5 h-3.5" />
         </Link>
 
         {/* Divider */}
-        <div className={`w-full h-px mb-6 ${hasHighlight ? "bg-white/10" : "bg-slate-100"}`} />
+        <div className={`w-full h-px mb-5 ${hasHighlight ? "bg-background/10" : "bg-border"}`} />
 
         {/* Features */}
-        <p className={`text-[10px] font-bold uppercase tracking-widest mb-5 ${hasHighlight ? "text-purple-300/60" : "text-slate-400"}`}>
+        <p className={`text-[10px] font-medium uppercase tracking-wide mb-4 ${hasHighlight ? "text-background/40" : "text-muted-foreground"}`}>
           What's included
         </p>
-        <ul className="space-y-3.5 flex-1">
+        <ul className="space-y-3 flex-1">
           {item.features.map((feature, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <div className={`
-                w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5
-                ${hasHighlight ? "bg-purple-500/20" : "bg-slate-100"}
-              `}>
-                <Check className={`w-3 h-3 ${hasHighlight ? "text-purple-300" : "text-slate-600"}`} strokeWidth={3} />
-              </div>
-              <span className={`text-sm leading-snug ${hasHighlight ? "text-purple-100/80" : "text-slate-600"}`}>
+            <li key={i} className="flex items-start gap-2.5">
+              <Check className={`w-3.5 h-3.5 shrink-0 mt-0.5 ${hasHighlight ? "text-background/60" : "text-primary"}`} strokeWidth={2.5} />
+              <span className={`text-sm leading-snug ${hasHighlight ? "text-background/70" : "text-muted-foreground"}`}>
                 {feature}
               </span>
             </li>
           ))}
         </ul>
-      </div>
-    </div>
-  )
-}
-
-// ─── Component: FAQItem ────────────────────────────────────────────────────
-
-function FAQItemComp({ faq, index }: { faq: { q: string; a: string }; index: number }) {
-  const [open, setOpen] = useState(false)
-
-  return (
-    <div
-      className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-        open ? "border-purple-200 bg-purple-50/50" : "border-slate-100 bg-white hover:border-purple-100"
-      }`}
-    >
-      <button
-        id={`faq-item-${index}`}
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
-      >
-        <span className="font-semibold text-slate-900 text-sm md:text-base pr-4">{faq.q}</span>
-        <div className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${open ? "bg-purple-100 rotate-180" : "bg-slate-100"}`}>
-          <ChevronDown className={`w-4 h-4 transition-colors ${open ? "text-purple-600" : "text-slate-500"}`} />
-        </div>
-      </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? "max-h-48" : "max-h-0"}`}>
-        <p className="px-6 pb-5 text-sm text-slate-500 leading-relaxed">{faq.a}</p>
       </div>
     </div>
   )
@@ -349,54 +297,33 @@ export default function PricingPage() {
   const activeCategory = categories.find((c) => c.id === activeTab)!
 
   return (
-    <div className="min-h-screen bg-[#FDFCF8]">
+    <div className="min-h-screen bg-background">
 
       {/* ── Hero ── */}
-      <section className="relative pt-24 pb-20 overflow-hidden">
-        {/* Background orbs */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-20 right-0 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
-          <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-violet-100/50 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-        </div>
-
-        <div className="relative container mx-auto px-6 md:px-12">
+      <section className="relative pt-20 pb-16 overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto text-center">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-xs font-bold uppercase tracking-widest mb-8">
-            <Zap className="w-3 h-3" />
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium uppercase tracking-wide mb-6">
             Transparent Pricing
           </div>
 
           {/* Heading */}
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-[#1E152A] leading-[1.1] mb-6">
-            Invest in Your{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">
-                Spiritual Growth
-              </span>
-              <span className="absolute inset-x-0 -bottom-1 h-3 bg-purple-100/60 rounded-sm -z-0" />
-            </span>
+          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-snug mb-5">
+            Invest in Your Spiritual Growth
           </h1>
 
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed mb-12">
-            Choose the plan that resonates with your journey. Every session is a step towards deeper self-understanding, clarity, and purpose.
+          <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
+            Choose the plan that resonates with your journey. Every session is a step towards deeper self-understanding and clarity.
           </p>
 
           {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              No subscription lock-in
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              Secure online payment
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400" />
-              Cancel anytime
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
+            <span>No subscription lock-in</span>
+            <span>·</span>
+            <span>Secure online payment</span>
+            <span>·</span>
+            <span>Cancel anytime</span>
           </div>
           </div>
         </div>
@@ -406,7 +333,7 @@ export default function PricingPage() {
       <section className="pb-6">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex justify-center">
-            <div className="inline-flex items-center bg-white rounded-2xl p-1.5 ring-1 ring-slate-100 gap-1">
+            <div className="inline-flex items-center bg-muted rounded-md p-0.5 gap-0.5">
               {categories.map((cat) => {
                 const Icon = cat.icon
                 const isActive = activeTab === cat.id
@@ -416,10 +343,10 @@ export default function PricingPage() {
                     id={`tab-${cat.id}`}
                     onClick={() => setActiveTab(cat.id)}
                     className={`
-                      flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 whitespace-nowrap
+                      flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap
                       ${isActive
-                        ? "bg-[#1E152A] text-white"
-                        : "text-slate-500 hover:text-slate-800 hover:bg-slate-50"
+                        ? "bg-background text-foreground border border-border"
+                        : "text-muted-foreground hover:text-foreground"
                       }
                     `}
                   >
@@ -434,11 +361,11 @@ export default function PricingPage() {
       </section>
 
       {/* ── Category Header ── */}
-      <section className="py-10">
+      <section className="py-6">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-2xl mx-auto text-center">
-        <p className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-3">{activeCategory.tagline}</p>
-        <p className="text-slate-500 leading-relaxed">{activeCategory.description}</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">{activeCategory.tagline}</p>
+        <p className="text-sm text-muted-foreground leading-relaxed">{activeCategory.description}</p>
           </div>
         </div>
       </section>
@@ -462,11 +389,11 @@ export default function PricingPage() {
       </section>
 
       {/* ── Compare note ── */}
-      <section className="pb-20">
+      <section className="pb-12">
         <div className="container mx-auto px-6 md:px-12 text-center">
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-muted-foreground">
           Not sure which plan is right for you?{" "}
-          <Link href="/book" className="text-purple-600 font-semibold hover:text-purple-700 transition-colors">
+          <Link href="/book" className="text-primary font-medium hover:underline transition-colors">
             Book a free 10-min discovery call →
           </Link>
         </p>
@@ -474,26 +401,11 @@ export default function PricingPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="bg-white border-t border-slate-100 py-24">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-3xl mx-auto">
-          {/* Section header */}
-          <div className="text-center mb-16">
-            <p className="text-xs font-bold uppercase tracking-widest text-purple-500 mb-4">Got Questions?</p>
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#1E152A] mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-slate-500">Everything you need to know before booking your session.</p>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq, i) => (
-              <FAQItemComp key={i} faq={faq} index={i} />
-            ))}
-          </div>
-          </div>
-        </div>
-      </section>
+      <FAQ
+        items={faqs}
+        title="Frequently Asked Questions"
+        description="Everything you need to know before booking your session."
+      />
 
       <CallToAction />
 

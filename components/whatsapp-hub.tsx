@@ -14,7 +14,7 @@ export function WhatsAppHub() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-12 right-12 z-50 bg-white text-black rounded-full shadow-2xl border border-border/10 flex items-center justify-center h-14 w-14 overflow-hidden group"
+      className="fixed bottom-12 right-12 z-50 bg-white text-black rounded-full ring-1 ring-border flex items-center justify-center h-14 w-14 overflow-hidden group"
       title="Chat on WhatsApp"
       initial="initial"
       animate="animate"

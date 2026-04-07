@@ -4,10 +4,10 @@ import { ExternalLink } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-background pt-20 pb-10">
+    <footer className="w-full border-t border-border bg-background py-16">
       <div className="container mx-auto px-6 md:px-12">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           
           {/* Brand Column */}
           <div className="flex flex-col gap-6 lg:col-span-1">
@@ -24,17 +24,17 @@ export function Footer() {
 
           {/* Services Column */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-semibold text-foreground tracking-wide text-sm uppercase">Services</h4>
+            <h4 className="font-medium text-foreground text-sm">Services</h4>
             <nav className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <Link href="/read" className="transition-colors hover:text-foreground w-fit">Free Reading</Link>
               <Link href="/book" className="transition-colors hover:text-foreground w-fit">Private Sessions</Link>
               <Link href="/pricing" className="transition-colors hover:text-foreground w-fit">Pricing & Exchange</Link>
+              <Link href="/faq" className="transition-colors hover:text-foreground w-fit">FAQ</Link>
             </nav>
           </div>
 
           {/* Connect Column */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-semibold text-foreground tracking-wide text-sm uppercase">Connect</h4>
+            <h4 className="font-medium text-foreground text-sm">Connect</h4>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <a href={`mailto:${siteConfig.contact.email}`} className="transition-colors hover:text-foreground w-fit">{siteConfig.contact.email}</a>
               <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} className="transition-colors hover:text-foreground w-fit">{siteConfig.contact.phone}</a>
@@ -44,7 +44,7 @@ export function Footer() {
 
           {/* Social Column */}
           <div className="flex flex-col gap-5">
-            <h4 className="font-semibold text-foreground tracking-wide text-sm uppercase">Social</h4>
+            <h4 className="font-medium text-foreground text-sm">Social</h4>
             <div className="flex gap-4 text-muted-foreground">
               <Link href={siteConfig.links.instagram} target="_blank" className="hover:text-foreground transition-colors p-2 -ml-2 rounded-full hover:bg-secondary/50">
                  <ExternalLink className="h-5 w-5" />
@@ -65,8 +65,8 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-             <Link href="#" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-             <Link href="#" className="hover:text-foreground transition-colors">Terms of Service</Link>
+             <Link href="/policies" className="hover:text-foreground transition-colors">Privacy Policy</Link>
+             <Link href="/policies" className="hover:text-foreground transition-colors">Terms of Service</Link>
           </div>
         </div>
 

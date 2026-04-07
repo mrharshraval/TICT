@@ -29,10 +29,10 @@ export default function Home() {
             <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary">
               The Sanctuary
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Most Trusted Readings</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Our Most Trusted Readings</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-card border-slate-200">
+            <Card>
               <CardHeader>
                 <Clock className="h-8 w-8 text-primary mb-2" />
                 <CardTitle>The Clarity</CardTitle>
@@ -47,7 +47,7 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
-            <Card className="bg-card border-primary/20 ring-1 ring-primary/10">
+            <Card>
               <CardHeader>
                 <Heart className="h-8 w-8 text-primary mb-2" />
                 <CardTitle>The Deep Dive</CardTitle>
@@ -62,7 +62,7 @@ export default function Home() {
                 </Button>
               </CardContent>
             </Card>
-            <Card className="bg-card border-slate-200">
+            <Card>
               <CardHeader>
                 <BookOpen className="h-8 w-8 text-primary mb-2" />
                 <CardTitle>The Year Ahead</CardTitle>
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Google Reviews */}
-      <section className="w-full bg-secondary py-20 md:py-32">
+      <section className="w-full bg-muted py-16">
         <GoogleReviews />
       </section>
 
@@ -90,7 +90,7 @@ export default function Home() {
       <section id="about" className="w-full py-24 md:py-32 lg:py-40">
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-10">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight">The Story of the Compass</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">The Story of the Compass</h2>
           <p className="text-xl md:text-2xl text-primary font-medium italic">
             "We believe the cards don't tell your future—they tell your truth."
           </p>

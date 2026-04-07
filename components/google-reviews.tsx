@@ -28,12 +28,12 @@ const MOCK_REVIEWS = [
 
 export function GoogleReviews() {
   return (
-    <div className="container mx-auto px-6 md:px-12 py-12">
+    <div className="container mx-auto px-6 md:px-12 py-16">
       <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
         
         {/* Left: Standard Corporate Summary */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:w-1/3 sticky top-32">
-           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Real Seeker Stories</h2>
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 lg:w-1/3 lg:sticky lg:top-32">
+           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Real Seeker Stories</h2>
            <p className="text-muted-foreground text-lg">Listen to the experiences of those who have sat at our table and found clarity.</p>
            
            <div className="pt-8 flex flex-col items-center lg:items-start gap-4 border-t border-border/40 w-full">
@@ -53,7 +53,7 @@ export function GoogleReviews() {
         </div>
         
         {/* Right: Static Masonry/Grid */}
-        <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+        <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
            {MOCK_REVIEWS.map((review, idx) => (
              <Card key={idx} className="bg-card flex flex-col shadow-none">
                 <CardContent className="p-8 flex flex-col h-full space-y-6">
