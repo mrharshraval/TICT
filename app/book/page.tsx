@@ -89,7 +89,7 @@ export default function BookingPage() {
 
         {/* Action Column (Right) */}
         <div className="lg:col-span-7">
-          <Card className="bg-card/40 backdrop-blur border-t-4 border-t-primary">
+          <Card className="bg-card border-t-4 border-t-primary">
             <CardHeader className="pb-8">
               <CardTitle className="text-3xl">Request a Reading</CardTitle>
               <CardDescription className="text-base">Provide your details to initiate the journey. We will confirm your session time via email.</CardDescription>
@@ -162,7 +162,7 @@ export default function BookingPage() {
                       />
                     </div>
 
-                  <Button className="w-full h-14 text-lg group mt-4">
+                  <Button className="w-full group mt-4">
                     <Send className="mr-2 h-5 w-5" />
                     Request Session
                   </Button>
@@ -175,7 +175,7 @@ export default function BookingPage() {
                    </div>
                    <h3 className="text-3xl font-bold mt-4">Journey Initiated</h3>
                    <p className="text-muted-foreground text-lg max-w-md">Your request has been cast into the universe. We will be in touch shortly to confirm your booking.</p>
-                   <Button variant="outline" className="mt-8 h-12 px-8" onClick={() => setIsSubmitted(false)}>
+                   <Button variant="outline" className="mt-8" onClick={() => setIsSubmitted(false)}>
                      Book Another Session
                    </Button>
                 </div>

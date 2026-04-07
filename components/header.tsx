@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button"
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-24 items-center justify-between px-6 md:px-12">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/98">
+      <div className="container mx-auto flex h-16 md:h-20 items-center justify-between px-6 md:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
-          <img src="/media/tict-logo.png" alt="TICT" className="h-10 sm:h-12 w-auto object-contain dark:invert" />
+          <img src="/media/tict-logo.png" alt="TICT" className="h-8 sm:h-10 w-auto object-contain dark:invert" />
           <span className="hidden font-bold sm:inline-block">
             {siteConfig.name}
           </span>
@@ -39,7 +39,7 @@ export function Header() {
           </nav>
 
           {/* CTA */}
-          <Button asChild className="h-12 px-8 text-sm">
+          <Button asChild size="default">
             <Link href="/book">Book a Session</Link>
           </Button>
         </div>

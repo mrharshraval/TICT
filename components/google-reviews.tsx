@@ -38,7 +38,7 @@ export function GoogleReviews() {
            
            <div className="pt-8 flex flex-col items-center lg:items-start gap-4 border-t border-border/40 w-full">
              <div className="flex items-center gap-4">
-                <span className="text-6xl font-bold tracking-tighter">5.0</span>
+                <span className="text-5xl font-semibold tracking-tight">5.0</span>
                 <div className="flex flex-col gap-1 items-start">
                   <span className="text-sm font-semibold tracking-wider flex items-center gap-2">
                      Google Reviews
@@ -46,7 +46,7 @@ export function GoogleReviews() {
                 </div>
              </div>
              <p className="text-sm text-muted-foreground">Based on 142 authentic ratings.</p>
-             <Button variant="outline" className="mt-4 h-12 w-full lg:w-auto">
+             <Button variant="outline" size="default" className="mt-4">
                <ExternalLink className="h-4 w-4 mr-2" /> Read All Reviews
              </Button>
            </div>
@@ -55,7 +55,7 @@ export function GoogleReviews() {
         {/* Right: Static Masonry/Grid */}
         <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
            {MOCK_REVIEWS.map((review, idx) => (
-             <Card key={idx} className="bg-card/40 backdrop-blur flex flex-col shadow-none">
+             <Card key={idx} className="bg-card flex flex-col shadow-none">
                 <CardContent className="p-8 flex flex-col h-full space-y-6">
 
                   <p className="text-muted-foreground italic leading-relaxed text-base flex-1">

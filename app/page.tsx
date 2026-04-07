@@ -6,43 +6,17 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { GoogleReviews } from "@/components/google-reviews"
 import { FAQ } from "@/components/faq"
 import { CallToAction } from "@/components/cta"
+import { WhatsAppHub } from "@/components/whatsapp-hub"
+import { HeroCardPicker } from "@/components/hero-card-picker"
 import { siteConfig } from "@/lib/site-config"
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full py-24 md:py-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-secondary/10 -z-10" />
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[50vh]">
-            <div className="flex flex-col items-start space-y-8 animate-in fade-in slide-in-from-left-6 duration-1000">
-              <div className="space-y-4 text-left">
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.2]">
-                  The Inner Compass <span className="text-primary italic">Tarot</span>
-                </h1>
-                <p className="max-w-[540px] text-muted-foreground text-lg md:text-xl">
-                  Unlock the wisdom of the cards. Your path to clarity, purpose, and spiritual growth begins here.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Button size="lg" className="h-12 px-8 text-lg" asChild>
-                  <Link href="/read">
-                    Start Your Reading
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="h-12 px-8 text-lg" asChild>
-                  <Link href="/book">
-                    Book a Consultation
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            {/* Visual Column / Future Cards Placeholder */}
-            <div className="hidden lg:flex relative h-[500px] w-full items-end justify-end overflow-visible">
-               {/* This space is reserved for the 3 tarot cards */}
-            </div>
-          </div>
+      {/* Hero Section - Replicated from Source */}
+      <section className="relative w-full overflow-hidden bg-background bg-[image:var(--image-grid-pattern)] min-h-[80vh] flex items-center justify-center pt-14">
+        <div className="w-full relative z-10">
+          <HeroCardPicker />
         </div>
         {/* Subtle background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full -z-10 pointer-events-none" />
@@ -57,44 +31,47 @@ export default function Home() {
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">Our Most Trusted Readings</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="bg-card/40 backdrop-blur-sm transition-all duration-300">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="bg-card border-slate-200">
               <CardHeader>
                 <Clock className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>The Daily Draw</CardTitle>
-                <CardDescription>A single card to guide your morning and set your intention.</CardDescription>
+                <CardTitle>The Clarity</CardTitle>
+                <CardDescription>A 30-minute focused session for immediate perspective. Includes free Numerology.</CardDescription>
+                <div className="text-2xl font-bold mt-2">₹1,599</div>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group" asChild>
-                   <Link href="/read?type=daily">
+                <Button variant="outline" className="w-full group" asChild>
+                   <Link href="/pricing">
                       Experience Now
                    </Link>
                 </Button>
               </CardContent>
             </Card>
-            <Card className="bg-card/40 backdrop-blur-sm transition-all duration-300">
+            <Card className="bg-card border-primary/20 ring-1 ring-primary/10">
               <CardHeader>
                 <Heart className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>Three-Card Spread</CardTitle>
-                <CardDescription>Insights into your Past, Present, and Future journey.</CardDescription>
+                <CardTitle>The Deep Dive</CardTitle>
+                <CardDescription>60 minutes of profound exploration into your spiritual path. Includes free Numerology.</CardDescription>
+                <div className="text-2xl font-bold mt-2">₹1,999</div>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group" asChild>
-                   <Link href="/read?type=3-card">
+                <Button variant="default" className="w-full group" asChild>
+                   <Link href="/pricing">
                       Reveal Wisdom
                    </Link>
                 </Button>
               </CardContent>
             </Card>
-            <Card className="bg-card/40 backdrop-blur-sm transition-all duration-300">
+            <Card className="bg-card border-slate-200">
               <CardHeader>
                 <BookOpen className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>The Celtic Cross</CardTitle>
-                <CardDescription>Our most comprehensive reading for deep clarity and foresight.</CardDescription>
+                <CardTitle>The Year Ahead</CardTitle>
+                <CardDescription>Our comprehensive yearly package with monthly guidance and WhatsApp support.</CardDescription>
+                <div className="text-2xl font-bold mt-2">₹12,000</div>
               </CardHeader>
               <CardContent>
-                <Button variant="ghost" className="w-full group" asChild>
-                   <Link href="/read?type=celtic">
+                <Button variant="outline" className="w-full group" asChild>
+                   <Link href="/pricing">
                       Seek Depth
                    </Link>
                 </Button>
@@ -105,13 +82,14 @@ export default function Home() {
       </section>
 
       {/* Google Reviews */}
-      <section className="w-full bg-secondary/5 py-20 md:py-32">
+      <section className="w-full bg-secondary py-20 md:py-32">
         <GoogleReviews />
       </section>
 
       {/* About the Foundation */}
       <section id="about" className="w-full py-24 md:py-32 lg:py-40">
-        <div className="container mx-auto px-6 md:px-12 max-w-4xl flex flex-col items-center text-center space-y-10">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="max-w-4xl mx-auto flex flex-col items-center text-center space-y-10">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">The Story of the Compass</h2>
           <p className="text-xl md:text-2xl text-primary font-medium italic">
             "We believe the cards don't tell your future—they tell your truth."
@@ -140,8 +118,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </div>
         </div>
       </section>
+      <CallToAction />
       <FAQ 
         items={[
           { question: "What is Tarot?", answer: "Tarot is a deck of 78 cards, each with its own imagery, symbolism and story. It's used as a tool for spiritual guidance and reflection." },
@@ -150,21 +130,7 @@ export default function Home() {
         ]} 
       />
 
-      <CallToAction />
-
-      {/* Floating WhatsApp Button */}
-      <a 
-        href={`https://wa.me/${siteConfig.contact.phone.replace(/[^0-9]/g, '')}`}
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-foreground text-background p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group border border-border/50 backdrop-blur"
-        title="Chat on WhatsApp"
-      >
-        <MessageCircle className="h-6 w-6" />
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 whitespace-nowrap font-medium">
-          Consult on WhatsApp
-        </span>
-      </a>
+      <WhatsAppHub />
     </div>
   )
 }

@@ -209,7 +209,7 @@ export default function ReadingSanctuary() {
                        </CardContent>
                     </Card>
                     <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1 opacity-100">
-                       <Button variant="outline" size="sm" className="h-8 rounded-none">
+                       <Button variant="outline" size="sm" className="h-8">
                           View Meaning <ChevronRight className="h-3 w-3 ml-1" />
                        </Button>
                     </div>

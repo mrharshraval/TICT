@@ -1,5 +1,4 @@
-import { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 
 import "./globals.css"
 import { Header } from "@/components/header"
@@ -9,9 +8,12 @@ import { Toaster } from "@/components/ui/sonner"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site-config"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const fontSans = Inter({ 
+  subsets: ["latin"], 
+  variable: "--font-sans" 
+})
 
-const fontMono = Geist_Mono({
+const fontMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
@@ -68,8 +70,7 @@ export default function RootLayout({
       className={cn(
         "antialiased",
         fontMono.variable,
-        "font-sans",
-        geist.variable
+        fontSans.variable
       )}
     >
       <body className="min-h-screen bg-background font-sans antialiased">

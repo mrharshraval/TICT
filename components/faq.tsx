@@ -21,7 +21,8 @@ export function FAQ({ items, title = "Frequently Asked Questions", description =
 
   return (
     <section className="w-full py-16 md:py-24">
-      <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">{title}</h2>
           <p className="text-muted-foreground mt-4 text-lg">{description}</p>
@@ -38,6 +39,7 @@ export function FAQ({ items, title = "Frequently Asked Questions", description =
             </AccordionItem>
           ))}
         </Accordion>
+        </div>
       </div>
     </section>
   )
