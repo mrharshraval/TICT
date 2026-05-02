@@ -3,7 +3,6 @@ import Image from "next/image"
 import { BookOpen, Clock, Heart, Users, MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { GoogleReviews } from "@/components/google-reviews"
 import { FAQ } from "@/components/faq"
 import { CallToAction } from "@/components/cta"
 import { WhatsAppHub } from "@/components/whatsapp-hub"
@@ -65,7 +64,7 @@ export default function Home() {
             <Card>
               <CardHeader>
                 <BookOpen className="h-8 w-8 text-primary mb-2" />
-                <CardTitle>The Year Ahead</CardTitle>
+                <CardTitle>Manifestation Package</CardTitle>
                 <CardDescription>Our comprehensive yearly package with monthly guidance and WhatsApp support.</CardDescription>
                 <div className="text-2xl font-bold mt-2">₹12,000</div>
               </CardHeader>
@@ -79,11 +78,6 @@ export default function Home() {
             </Card>
           </div>
         </div>
-      </section>
-
-      {/* Google Reviews */}
-      <section className="w-full bg-muted py-16">
-        <GoogleReviews />
       </section>
 
       {/* About the Foundation */}
@@ -124,7 +118,7 @@ export default function Home() {
       <CallToAction />
       <FAQ 
         items={[
-          { question: "What is Tarot?", answer: "Tarot is a deck of 78 cards, each with its own imagery, symbolism and story. It's used as a tool for spiritual guidance and reflection." },
+          { question: "What is Tarot?", answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a situation. 'Manifestation Package' is for seekers committed to long-term, guided spiritual growth and understanding broader life cycles." },
           { question: "How does an online reading work?", answer: "The energy transcends physical distance. As you focus your intent and select your spread online, the synchronicity principle allows the right cards to surface for you." },
           { question: "Are my readings confidential?", answer: "Absolutely. All private sessions and personal readings are strictly confidential and will never be shared." }
         ]} 

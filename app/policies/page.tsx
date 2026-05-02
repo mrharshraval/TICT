@@ -32,14 +32,14 @@ export default function PoliciesPage() {
           </section>
 
           <section className="space-y-6">
-            <h2 className="text-2xl font-semibold text-foreground border-b border-border pb-2">Cancellation & Rescheduling Policy</h2>
+            <h2 className="text-2xl font-semibold text-foreground border-b border-border pb-2">Rescheduling Policy</h2>
             <div className="space-y-4 text-muted-foreground text-sm leading-relaxed">
               <p>
-                We value your time and the time of our readers. If you need to cancel or reschedule your appointment, we require a minimum of <strong>24 hours' notice</strong> prior to your scheduled session time.
+                We value your time and the time of our readers. We can help reschedule your session, but please note that fees will not be refunded.
               </p>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong>More than 24 hours notice:</strong> You may reschedule or cancel your session with no penalty. Refunds process in 3-5 business days.</li>
-                <li><strong>Less than 24 hours notice:</strong> Cancellations or requests to reschedule made within 24 hours of the appointment time will incur a 50% rescheduling fee.</li>
+                <li><strong>Rescheduling:</strong> Please communicate with us as early as possible so we can find a new suitable time for your session.</li>
+                <li><strong>No Refunds:</strong> All payments are final and no refunds will be issued for cancellations or rescheduling.</li>
                 <li><strong>No-Shows:</strong> If you do not show up for your scheduled video call within 15 minutes of the start time, it is considered a no-show. No refunds will be issued for no-shows.</li>
                 <li><strong>Late Arrivals:</strong> If you arrive late, the session will still end at the originally scheduled time so as not to delay following clients.</li>
               </ul>

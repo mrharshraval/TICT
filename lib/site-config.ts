@@ -4,8 +4,7 @@ export const siteConfig = {
   url: "https://theinnercompasstarot.in",
   ogImage: "https://theinnercompasstarot.in/og.jpg",
   links: {
-    twitter: "https://twitter.com/theinnercompasstarot",
-    instagram: "https://instagram.com/theinnercompasstarot",
+    youtube: "https://www.youtube.com/@theinnercompasstarot",
   },
   contact: {
     email: "theinnercompasstarot@gmail.com",

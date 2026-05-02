@@ -17,6 +17,7 @@ import { FAQ, FAQItem } from "@/components/faq"
 import { siteConfig } from "@/lib/site-config"
 import { cn } from "@/lib/utils"
 import { toast } from "sonner"
+import { sendBookingEmail } from "@/app/actions/send-email"
 
 const bookingFaqs: FAQItem[] = [
   {
@@ -28,8 +29,8 @@ const bookingFaqs: FAQItem[] = [
     answer: "Most private sessions are conducted via Zoom (video or audio-only, depending on your comfort level). If you are local, in-person sessions can be arranged at the Sanctuary."
   },
   {
-    question: "What happens if I need to cancel or reschedule?",
-    answer: "Please provide at least 24 hours notice if you need to reschedule. We understand life happens, but respectful communication allows us to offer the slot to another seeker."
+    question: "What happens if I need to reschedule?",
+    answer: "We can help reschedule your session, but please note that fees will not be refunded. Respectful communication allows us to find a new slot for you."
   },
   {
     question: "Can the cards predict my definite future?",
@@ -46,6 +47,8 @@ function BookingForm() {
   const [date, setDate] = useState<Date>()
   const [selectedType, setSelectedType] = useState<string | undefined>(initialType)
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   // Sync state if url changes via back/forward navigation within the app
   useEffect(() => {
     const t = searchParams.get("type")
@@ -53,11 +56,53 @@ function BookingForm() {
     else setSelectedType(undefined)
   }, [searchParams])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // In a real app, this would call a server action or API route
-    toast.success("Request received! The Inner Compass will resonate with you shortly.")
-    setIsSubmitted(true)
+    setIsSubmitting(true)
+
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get("name") as string
+    const email = formData.get("email") as string
+    const intent = formData.get("intent") as string
+    
+    const SERVICE_MAP: Record<string, { label: string, price: string }> = {
+      "the-clarity": { label: "The Clarity (Tarot)", price: "₹1,599" },
+      "the-deep-dive": { label: "The Deep Dive (Tarot)", price: "₹1,999" },
+      "the-year-ahead": { label: "Manifestation Package (Tarot)", price: "₹12,000" },
+      "sound-healing": { label: "Sound Healing", price: "₹1,999" },
+      "reiki-healing": { label: "Reiki Healing", price: "₹999" },
+      "full-balancing": { label: "Full Balancing", price: "Custom" },
+      "numerical-map": { label: "Numerical Map", price: "₹1,499" },
+      "crystal-path": { label: "Crystal Path", price: "Varies" },
+    }
+
+    const serviceInfo = selectedType && SERVICE_MAP[selectedType] 
+      ? SERVICE_MAP[selectedType] 
+      : { label: selectedType || "Not specified", price: "Not specified" }
+
+    const formattedDate = date ? format(date, "PPP") : "Not specified"
+
+    try {
+      const result = await sendBookingEmail({
+        name,
+        email,
+        type: serviceInfo.label,
+        price: serviceInfo.price,
+        date: formattedDate,
+        intent
+      })
+
+      if (result.success) {
+        toast.success("Request received! The Inner Compass will resonate with you shortly.")
+        setIsSubmitted(true)
+      } else {
+        toast.error("Failed to send request. Please try again.")
+      }
+    } catch (error) {
+      toast.error("Failed to send request. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -80,11 +125,11 @@ function BookingForm() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-3">
             <label className="text-sm font-medium">Full Name</label>
-            <Input className="h-10" placeholder="John Doe" required />
+            <Input name="name" className="h-10" placeholder="John Doe" required />
           </div>
           <div className="space-y-3">
             <label className="text-sm font-medium">Email Address</label>
-            <Input className="h-10" type="email" placeholder="john@example.com" required />
+            <Input name="email" className="h-10" type="email" placeholder="john@example.com" required />
           </div>
         </div>
 
@@ -98,9 +143,9 @@ function BookingForm() {
               <SelectContent>
                 <SelectItem value="the-clarity">The Clarity (Tarot) - ₹1,599</SelectItem>
                 <SelectItem value="the-deep-dive">The Deep Dive (Tarot) - ₹1,999</SelectItem>
-                <SelectItem value="the-year-ahead">The Year Ahead (Tarot) - ₹12,000</SelectItem>
-                <SelectItem value="sound-healing">Sound Healing - ₹499</SelectItem>
-                <SelectItem value="reiki-healing">Reiki Healing - ₹1,999</SelectItem>
+                <SelectItem value="the-year-ahead">Manifestation Package (Tarot) - ₹12,000</SelectItem>
+                <SelectItem value="sound-healing">Sound Healing - ₹1,999</SelectItem>
+                <SelectItem value="reiki-healing">Reiki Healing - ₹999</SelectItem>
                 <SelectItem value="full-balancing">Full Balancing - Custom</SelectItem>
                 <SelectItem value="numerical-map">Numerical Map - ₹1,499</SelectItem>
                 <SelectItem value="crystal-path">Crystal Path - Varies</SelectItem>
@@ -141,14 +186,15 @@ function BookingForm() {
         <div className="space-y-3 pt-2">
           <label className="text-sm font-medium">Your Intention or Question <span className="text-muted-foreground font-normal">(Optional)</span></label>
           <Textarea 
+            name="intent"
             placeholder="Share your intent, specific questions, or areas of life you'd like to focus on..." 
             className="min-h-[160px] resize-none bg-background/50"
           />
         </div>
 
-      <Button className="w-full group mt-4 h-10">
+      <Button type="submit" disabled={isSubmitting} className="w-full group mt-4 h-10">
         <Send className="mr-2 h-5 w-5" />
-        Request Session
+        {isSubmitting ? "Initiating Journey..." : "Request Session"}
       </Button>
     </form>
   )

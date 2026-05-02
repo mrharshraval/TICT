@@ -53,9 +53,9 @@ const categories = [
         ctaHref: "/book?type=the-deep-dive",
       },
       {
-        name: "The Year Ahead",
-        price: "12,000",
-        currency: "₹",
+        name: "Manifestation Package",
+        price: "Custom Pricing",
+        currency: "",
         unit: "per year",
         badge: "Best Value",
         description: "A full year of guided spiritual growth. Monthly sessions with priority access and dedicated support.",
@@ -64,9 +64,9 @@ const categories = [
           "One half-price reading per month",
           "WhatsApp Query Sessions (5/mo)",
           "Monthly alignment check-ins",
-          "24/7 priority support",
-          "Dedicated account manager",
-          "Tailored training & resources",
+          "Priority scheduling access",
+          "Personalized spiritual roadmap",
+          "Guided meditation resources",
         ],
         cta: "Start Your Year",
         ctaHref: "/book?type=the-year-ahead",
@@ -82,7 +82,7 @@ const categories = [
     items: [
       {
         name: "Sound Healing",
-        price: "499",
+        price: "1,999",
         currency: "₹",
         unit: "per 60 mins",
         badge: null,
@@ -99,7 +99,7 @@ const categories = [
       },
       {
         name: "Reiki Healing",
-        price: "1,999",
+        price: "999",
         currency: "₹",
         unit: "per session",
         badge: "Most Popular",
@@ -108,9 +108,8 @@ const categories = [
           "Universal life force energy work",
           "Distance healing manifestation",
           "Advanced chakra assessment",
-          "Extended energy access",
           "Post-session energy report",
-          "Dedicated account manager",
+          "Personalized energy guidance",
         ],
         cta: "Book Session",
         ctaHref: "/book?type=reiki-healing",
@@ -125,10 +124,9 @@ const categories = [
         features: [
           "Complete chakra balancing process",
           "Crystal energy healing",
-          "Access to exclusive webinars",
-          "Monthly performance reviews",
-          "Real-time energy tracking",
+          "Vibrational frequency reset",
           "Tailored spiritual sessions",
+          "Holistic integration practices",
         ],
         cta: "Enquire Now",
         ctaHref: "/book?type=full-balancing",
@@ -152,9 +150,8 @@ const categories = [
         features: [
           "Loshu Grid analysis",
           "Vedic Numerology insights",
-          "Basic analytics & email support",
-          "Custom dashboards guidance",
-          "Real-time data tracking",
+          "Life path & destiny number interpretation",
+          "Yearly cycles & personal year guidance",
         ],
         cta: "Get Your Map",
         ctaHref: "/book?type=numerical-map",
@@ -169,11 +166,9 @@ const categories = [
         features: [
           "Guidance 'as per DOB'",
           "Guidance 'as per need'",
-          "Charged crystal tracking",
+          "Energetically cleansed & charged",
           "Aura protection stones",
-          "Extended crystal sourcing",
-          "Dedicated account manager",
-          "Tailored training sessions",
+          "Custom grid recommendations",
         ],
         cta: "Begin Path",
         ctaHref: "/book?type=crystal-path",
@@ -185,7 +180,7 @@ const categories = [
 const faqs = [
   {
     question: "How do I choose the right plan?",
-    answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a situation. 'The Year Ahead' is for seekers committed to long-term, guided spiritual growth.",
+    answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a situation. 'Manifestation Package' is for seekers committed to long-term, guided spiritual growth.",
   },
   {
     question: "How do WhatsApp Query Sessions work?",
@@ -200,8 +195,8 @@ const faqs = [
     answer: "Yes! We offer digital gift cards for all our sessions. Simply select the plan you wish to gift during booking, enter the recipient's details, and we'll handle the rest.",
   },
   {
-    question: "What is your cancellation policy?",
-    answer: "We ask for at least 24 hours' notice for cancellations or rescheduling. Sessions cancelled within 24 hours may be subject to a rescheduling fee. Please see our full policy on the booking page.",
+    question: "What is your rescheduling policy?",
+    answer: "We can help reschedule your session, but please note that fees will not be refunded. Please see our full policy on the policies page.",
   },
 ]
 
@@ -303,28 +298,26 @@ export default function PricingPage() {
       <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="container mx-auto px-6 md:px-12">
           <div className="w-full text-center">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium uppercase tracking-wide mb-6">
-            Transparent Pricing
-          </div>
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-md bg-primary/10 text-primary text-xs font-medium uppercase tracking-wide mb-6">
+              Transparent Pricing
+            </div>
 
-          {/* Heading */}
-          <h1 className="text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-snug mb-5">
-            Invest in Your Spiritual Growth
-          </h1>
+            {/* Heading */}
+            <h1 className="text-2xl md:text-4xl font-semibold tracking-tight text-foreground leading-snug mb-5">
+              Invest in Your Spiritual Growth
+            </h1>
 
-          <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
-            Choose the plan that resonates with your journey. Every session is a step towards deeper self-understanding and clarity.
-          </p>
+            <p className="text-sm text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
+              Choose the plan that resonates with your journey. Every session is a step towards deeper self-understanding and clarity.
+            </p>
 
-          {/* Trust indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
-            <span>No subscription lock-in</span>
-            <span>·</span>
-            <span>Secure online payment</span>
-            <span>·</span>
-            <span>Cancel anytime</span>
-          </div>
+            {/* Trust indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
+              <span>No subscription lock-in</span>
+              <span>·</span>
+              <span>Secure online payment</span>
+            </div>
           </div>
         </div>
       </section>
@@ -364,8 +357,8 @@ export default function PricingPage() {
       <section className="py-6">
         <div className="container mx-auto px-6 md:px-12">
           <div className="w-full text-center">
-        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">{activeCategory.tagline}</p>
-        <p className="text-sm text-muted-foreground leading-relaxed">{activeCategory.description}</p>
+            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground mb-2">{activeCategory.tagline}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{activeCategory.description}</p>
           </div>
         </div>
       </section>
@@ -373,30 +366,30 @@ export default function PricingPage() {
       {/* ── Pricing Cards ── */}
       <section className="pb-24">
         <div className="container mx-auto px-6 md:px-12">
-        <div
-          key={activeTab}
-          className={`
+          <div
+            key={activeTab}
+            className={`
             grid gap-6 w-full mx-auto
             ${activeCategory.items.length === 2 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}
           `}
-          style={{ animation: "fadeSlideIn 0.4s ease both" }}
-        >
-          {activeCategory.items.map((item, i) => (
-            <PricingCard key={item.name} item={item} index={i} />
-          ))}
-        </div>
+            style={{ animation: "fadeSlideIn 0.4s ease both" }}
+          >
+            {activeCategory.items.map((item, i) => (
+              <PricingCard key={item.name} item={item} index={i} />
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ── Compare note ── */}
       <section className="pb-12">
         <div className="container mx-auto px-6 md:px-12 text-center">
-        <p className="text-sm text-muted-foreground">
-          Not sure which plan is right for you?{" "}
-          <Link href="/book" className="text-primary font-medium hover:underline transition-colors">
-            Book a free 10-min discovery call →
-          </Link>
-        </p>
+          <p className="text-sm text-muted-foreground">
+            Not sure which plan is right for you?{" "}
+            <Link href="/book" className="text-primary font-medium hover:underline transition-colors">
+              Book a free 10-min discovery call →
+            </Link>
+          </p>
         </div>
       </section>
 

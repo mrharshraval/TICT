@@ -133,13 +133,13 @@ export function HeroCardPicker() {
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 {drawnCards.length === 0 ? "Daily Reading" : "The Journey"}
                             </div>
-                            <h2 className="text-3xl md:text-5xl font-semibold text-slate-900">
+                            <h2 className="text-3xl md:text-5xl font-semibold text-foreground">
                                 {drawnCards.length === 0
                                     ? "Focus your intent"
                                     : `Card ${drawnCards.length + 1} of 3: ${SLOTS[drawnCards.length].label}`
                                 }
                             </h2>
-                            <p className="text-slate-500 text-[10px] uppercase font-medium tracking-[0.2em]">
+                            <p className="text-muted-foreground text-[10px] uppercase font-medium tracking-[0.2em]">
                                 {drawnCards.length === 0
                                     ? "The universe is listening"
                                     : "Choose wisely"
@@ -156,9 +156,14 @@ export function HeroCardPicker() {
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/10 text-[10px] font-bold uppercase tracking-widest text-primary mb-2">
                                 Reading Complete
                             </div>
-                            <h3 className="text-3xl md:text-4xl text-slate-800 italic font-semibold">
-                                "The path is revealed through your intuition."
-                            </h3>
+                            <div className="space-y-3">
+                                <h3 className="text-3xl md:text-4xl text-foreground italic font-semibold">
+                                    Nothing here is random.
+                                </h3>
+                                <p className="text-base md:text-lg text-muted-foreground max-w-md mx-auto leading-relaxed">
+                                    The cards you drew hold your energy. Trust the pull—let's uncover why they chose you.
+                                </p>
+                            </div>
                             <div className="pt-4 flex gap-4 justify-center">
                                 <Button className="rounded-full px-8 h-12" onClick={shuffleDeck}>
                                     <RefreshCw className="w-4 h-4 mr-2" /> New Reading

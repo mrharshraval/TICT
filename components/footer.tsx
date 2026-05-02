@@ -1,6 +1,25 @@
 import Link from "next/link"
 import { siteConfig } from "@/lib/site-config"
-import { ExternalLink } from "lucide-react"
+
+function YoutubeIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2.5 7.1c-.2 1.5-.3 3.1-.3 4.9s.1 3.4.3 4.9c.2 1.3 1.2 2.3 2.5 2.5 2.5.3 7.5.3 7.5.3s5 0 7.5-.3c1.3-.2 2.3-1.2 2.5-2.5.2-1.5.3-3.1.3-4.9s-.1-3.4-.3-4.9c-.2-1.3-1.2-2.3-2.5-2.5-2.5-.3-7.5-.3-7.5-.3s-5 0-7.5.3c-1.3.2-2.3 1.2-2.5 2.5Z" />
+      <path d="m10 15 5-3-5-3v6Z" />
+    </svg>
+  )
+}
 
 export function Footer() {
   return (
@@ -45,14 +64,12 @@ export function Footer() {
           {/* Social Column */}
           <div className="flex flex-col gap-5">
             <h4 className="font-medium text-foreground text-sm">Social</h4>
-            <div className="flex gap-4 text-muted-foreground">
-              <Link href={siteConfig.links.instagram} target="_blank" className="hover:text-foreground transition-colors p-2 -ml-2 rounded-full hover:bg-secondary/50">
-                 <ExternalLink className="h-5 w-5" />
-                 <span className="sr-only">Instagram</span>
-              </Link>
-              <Link href={siteConfig.links.twitter} target="_blank" className="hover:text-foreground transition-colors p-2 rounded-full hover:bg-secondary/50">
-                 <ExternalLink className="h-5 w-5" />
-                 <span className="sr-only">Twitter</span>
+            <div className="flex text-sm text-muted-foreground">
+              <Link href={siteConfig.links.youtube} target="_blank" className="group flex items-center gap-1 hover:text-foreground transition-colors w-fit">
+                 <div className="group-hover:text-[#FF0000] transition-colors p-1.5 -ml-1.5 rounded-full group-hover:bg-secondary/50">
+                   <YoutubeIcon className="h-5 w-5" />
+                 </div>
+                 <span>@theinnercompasstarot</span>
               </Link>
             </div>
           </div>

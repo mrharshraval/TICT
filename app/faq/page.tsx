@@ -14,7 +14,7 @@ const allFaqs = [
   },
   {
     question: "How do I choose the right plan or spread?",
-    answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a complex situation. 'The Year Ahead' is for seekers committed to long-term, guided spiritual growth and understanding broader life cycles."
+    answer: "'The Clarity' is perfect for quick, focused answers on a single matter. 'The Deep Dive' is for those who want to explore multiple dimensions of a complex situation. 'Manifestation Package' is for seekers committed to long-term, guided spiritual growth and understanding broader life cycles."
   },
   {
     question: "Can tarot predict the future?",
@@ -29,8 +29,8 @@ const allFaqs = [
     answer: "If you purchase a package that includes WhatsApp support, you can message our dedicated support line anytime. We provide clear, concise spiritual guidance within 72 hours for all queries sent through WhatsApp."
   },
   {
-    question: "What is your cancellation and rescheduling policy?",
-    answer: "We ask for at least 24 hours' notice for cancellations or rescheduling. Sessions cancelled within 24 hours may be subject to a rescheduling fee. No-shows will not be refunded. Please refer to our full Policies page for more details."
+    question: "What is your rescheduling policy?",
+    answer: "We can help reschedule your session, but please note that fees will not be refunded. No-shows will also not be refunded. Please refer to our full Policies page for more details."
   },
   {
     question: "Can I gift a session to someone else?",
