@@ -66,7 +66,7 @@ export default function Home() {
                 <BookOpen className="h-8 w-8 text-primary mb-2" />
                 <CardTitle>Manifestation Package</CardTitle>
                 <CardDescription>Our comprehensive yearly package with monthly guidance and WhatsApp support.</CardDescription>
-                <div className="text-2xl font-bold mt-2">₹12,000</div>
+                <div className="text-2xl font-bold mt-2">Custom Pricing</div>
               </CardHeader>
               <CardContent>
                 <Button variant="outline" className="w-full group" asChild>

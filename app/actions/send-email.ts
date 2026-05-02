@@ -85,7 +85,7 @@ export async function sendBookingEmail(data: {
     `;
 
     const adminMailOptions = {
-      from: `"TICT Booking System" <theinnercompasstarot@gmail.com>`,
+      from: `"TICT Booking" <theinnercompasstarot@gmail.com>`,
       to: "theinnercompasstarot@gmail.com",
       subject: `New Booking Request from ${data.name}`,
       html: adminHtml,

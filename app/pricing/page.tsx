@@ -56,11 +56,10 @@ const categories = [
         name: "Manifestation Package",
         price: "Custom Pricing",
         currency: "",
-        unit: "per year",
+        unit: "per 6 months",
         badge: "Best Value",
-        description: "A full year of guided spiritual growth. Monthly sessions with priority access and dedicated support.",
+        description: "6 months of guided spiritual growth. Monthly sessions with priority access and dedicated support.",
         features: [
-          "12 one-on-one sessions (monthly)",
           "One half-price reading per month",
           "WhatsApp Query Sessions (5/mo)",
           "Monthly alignment check-ins",
