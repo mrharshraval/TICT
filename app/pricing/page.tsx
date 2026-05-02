@@ -323,26 +323,27 @@ export default function PricingPage() {
       </section>
 
       {/* ── Tab Navigation ── */}
-      <section className="pb-6">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex justify-center">
-            <div className="inline-flex items-center bg-muted rounded-md p-0.5 gap-0.5">
-              {categories.map((cat) => {
-                const Icon = cat.icon
-                const isActive = activeTab === cat.id
-                return (
-                  <button
-                    key={cat.id}
-                    id={`tab-${cat.id}`}
-                    onClick={() => setActiveTab(cat.id)}
-                    className={`
-                      flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap
-                      ${isActive
-                        ? "bg-background text-foreground border border-border"
-                        : "text-muted-foreground hover:text-foreground"
-                      }
-                    `}
-                  >
+      <section className="pb-6 w-full">
+        <div className="container mx-auto px-0 md:px-12">
+          <div className="w-full overflow-x-auto px-6 md:px-0 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="flex md:justify-center min-w-max w-full">
+              <div className="inline-flex items-center bg-muted/80 backdrop-blur-sm rounded-lg p-1 gap-1">
+                {categories.map((cat) => {
+                  const Icon = cat.icon
+                  const isActive = activeTab === cat.id
+                  return (
+                    <button
+                      key={cat.id}
+                      id={`tab-${cat.id}`}
+                      onClick={() => setActiveTab(cat.id)}
+                      className={`
+                        flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap
+                        ${isActive
+                          ? "bg-background text-foreground shadow-sm ring-1 ring-border/50"
+                          : "text-muted-foreground hover:text-foreground hover:bg-background/50"
+                        }
+                      `}
+                    >
                     <Icon className="w-4 h-4" />
                     {cat.label}
                   </button>
@@ -350,6 +351,7 @@ export default function PricingPage() {
               })}
             </div>
           </div>
+        </div>
         </div>
       </section>
 
